@@ -29,7 +29,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar(*(format + i));
+			ch = va_arg(ap, int);
+			_putchar(ch);
 		}
 		i++;
 	}
