@@ -2,7 +2,7 @@
 /**
  *_printf - produces output according to a format.
  *@format: a character string
- *Returns: number of characters printed
+ *Return: number of characters printed
  */
 int _printf(const char *format, ...)
 {
@@ -25,6 +25,15 @@ int _printf(const char *format, ...)
 			{
 				str = va_arg(ap, char *);
 				printstring(str);
+			}
+			else if (*(format + i + 1) == '%')
+			{
+				_putchar('%');
+			}
+			else
+			{
+				_putchar('%');
+				_putchar(*(format + i + 1));
 			}
 		}
 		else
