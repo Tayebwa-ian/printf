@@ -5,5 +5,5 @@
 #include <stddef.h>
 int _putchar(char ch);
 int _printf(const char *format, ...);
-void printstring(char *str);
+int printstring(char *str);
 #endif

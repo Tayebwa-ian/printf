@@ -2,10 +2,10 @@
 /**
  *printstring - Prints characters of a string
  *@str: pointer to the string
- *Return: nothing
+ *Return: length of a string
  */
 
-void printstring(char *str)
+int printstring(char *str)
 {
 	int i = 0, ch;
 
@@ -15,5 +15,5 @@ void printstring(char *str)
 		_putchar(ch);
 		i++;
 	}
-	_putchar('\n');
+	return (i);
 }

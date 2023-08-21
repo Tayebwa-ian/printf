@@ -6,26 +6,23 @@
  */
 int _printf(const char *format, ...)
 {
-	int ch, i = 0;
+	int count, i = 0;
 	va_list ap;
-	char *str;
 
 	va_start(ap, format);
-
-	while (format + i != NULL && *(format + i) != '\0')
+	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
+		return (-1);
+	while (*(format + i) != '\0')
 	{
 		if (*(format + i) == '%')
 		{
 			if (*(format + i + 1) == 'c')
 			{
-				ch = va_arg(ap, int);
-				_putchar(ch);
+				_putchar(va_arg(ap, int));
 			}
 			else if (*(format + i + 1) == 's')
-			{
-				str = va_arg(ap, char *);
-				printstring(str);
-			}
+				count += printstring(va_arg(ap, char *)) - 1;
+
 			else if (*(format + i + 1) == '%')
 			{
 				_putchar('%');
@@ -34,15 +31,18 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				_putchar(*(format + i + 1));
+
 			}
+			i += 2;
+			count++;
 		}
 		else
 		{
 			_putchar(*(format + i));
+			i++;
+			count++;
 		}
-		i++;
 	}
 	va_end(ap);
-	return (i);
-
+	return (count);
 }
