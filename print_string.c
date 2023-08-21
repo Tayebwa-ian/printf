@@ -7,12 +7,11 @@
 
 int printstring(char *str)
 {
-	int i = 0, ch;
+	int i = 0;
 
-	while (*(str + i) == '\0')
+	while (*(str + i) != '\0')
 	{
-		ch = *(str + i);
-		_putchar(ch);
+		_putchar(*(str + i));
 		i++;
 	}
 	return (i);

@@ -7,6 +7,7 @@
 int _printf(const char *format, ...)
 {
 	int count, i = 0;
+	char *s;
 	va_list ap;
 
 	va_start(ap, format);
@@ -21,8 +22,10 @@ int _printf(const char *format, ...)
 				_putchar(va_arg(ap, int));
 			}
 			else if (*(format + i + 1) == 's')
-				count += printstring(va_arg(ap, char *)) - 1;
-
+			{
+				s = va_arg(ap, char *);
+				count += printstring(s) - 1;
+			}
 			else if (*(format + i + 1) == '%')
 			{
 				_putchar('%');
