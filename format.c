@@ -31,6 +31,11 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				i++;
 			}
+			else if ((*(format + i + 1) == 'd') || (*(format + i + 1) == 'i'))
+			{
+				count += _printd(va_arg(ap, int)) - 1;
+				i++;
+			}
 			else
 				_putchar('%');
 			i++;
