@@ -6,9 +6,15 @@
  */
 int brinary(unsigned int n)
 {
-	int i = 0;
+	unsigned int i = 0, m = 0;
 
-	if (n / 2 == 1)
+	if (n < m)
+		return (-1);
+	if (n == 0)
+		i += _putchar('0');
+	else if (n == 1)
+		i += _putchar('0');
+	else if (n / 2 == 1)
 	{
 		i += _putchar('0' + n / 2);
 	}
