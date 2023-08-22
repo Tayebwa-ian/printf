@@ -12,7 +12,7 @@ int _printd(int num)
 
 	if (num < 0)
 	{
-		_putchar('-');
+		len += _putchar('-');
 		num = -num;
 	}
 	if ((num / 10) != 0)
