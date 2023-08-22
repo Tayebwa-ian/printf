@@ -16,7 +16,8 @@ int _printd(int num)
 		len += _putchar('-');
 		temp = -num;
 	}
-	temp = num;
+	else
+		temp = num;
 	if ((temp / 10)!= 0)
 	{
 		len += _printd(temp / 10);
