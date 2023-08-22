@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int count = 0, i = 0;
+	int count = 0, i = 0, temp;
 	va_list ap;
 
 	va_start(ap, format);
@@ -33,7 +33,8 @@ int _printf(const char *format, ...)
 			}
 			else if ((*(format + i + 1) == 'd') || (*(format + i + 1) == 'i'))
 			{
-				count += _printd(va_arg(ap, int)) - 1;
+				temp = va_arg(ap, int);
+				count += _printd(temp) - 1;
 				i++;
 			}
 			else

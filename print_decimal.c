@@ -9,16 +9,18 @@
 int _printd(int num)
 {
 	int len = 0;
+	unsigned int temp;
 
 	if (num < 0)
 	{
 		len += _putchar('-');
-		num = -num;
+		temp = -num;
 	}
-	if ((num / 10) != 0)
+	temp = num;
+	if ((temp / 10)!= 0)
 	{
-		len += _printd(num / 10);
+		len += _printd(temp / 10);
 	}
-	len += _putchar('0' + num % 10);
+	len += _putchar('0' + (temp % 10));
 	return (len);
 }
