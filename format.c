@@ -19,22 +19,21 @@ int _printf(const char *format, ...)
 			if (*(format + i + 1) == 'c')
 			{
 				_putchar(va_arg(ap, int));
+				i++;
 			}
 			else if (*(format + i + 1) == 's')
 			{
 				count += printstring(va_arg(ap, char *)) - 1;
+				i++;
 			}
 			else if (*(format + i + 1) == '%')
 			{
 				_putchar('%');
+				i++;
 			}
 			else
-			{
 				_putchar('%');
-				_putchar(*(format + i + 1));
-
-			}
-			i += 2;
+			i++;
 			count++;
 		}
 		else
