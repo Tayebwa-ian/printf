@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*(format + i + 1) == 'b')
 			{
-				count += brinary(va_arg(ap, unsigned int));
+				count += brinary(va_arg(ap, unsigned int)) - 1;
 				i++;
 			}
 			else
