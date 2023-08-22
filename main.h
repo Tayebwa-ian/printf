@@ -7,4 +7,5 @@ int _putchar(char ch);
 int _printf(const char *format, ...);
 int printstring(char *str);
 int _printd(int num);
+int brinary(unsigned int n);
 #endif
